@@ -19,5 +19,9 @@ import json
 from flask import Flask, jsonfy
 
 # Parte 1 - Crear la Cadena de Bloques
+class Blockchain:
+    def __init__(self):
+        self.chain = []
+        self.create_block(proof = 1, previous_hash = '0')
 
 # Parte 2 - Minado de un BLoque de la Cadena
