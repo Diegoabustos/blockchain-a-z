@@ -31,5 +31,24 @@ class Blockchain:
                 'proof': proof,
                 'previous_hash': previous_hash
             }
+        self.chain.append(block)
+        return block
 
+    def get_previous_block(self):
+        return self.chain[-1]
 # Parte 2 - Minado de un BLoque de la Cadena
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
