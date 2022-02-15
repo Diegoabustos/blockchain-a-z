@@ -70,10 +70,11 @@ class Blockchain:
 # Parte 2 - Minado de un BLoque de la Cadena
 
 
+# Crear una aplicacion web
+app = Flask(__name__)
 
-
-
-
+# Crear una blockchain
+blockchain = Blockchain() 
 
 
 
