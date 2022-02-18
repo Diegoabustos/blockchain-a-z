@@ -75,6 +75,11 @@ app = Flask(__name__)
 
 # Crear una blockchain
 blockchain = Blockchain() 
+@app.route("/mine_block", methods=['GET'])
+def mine_block():
+    previous_block = blockchain.get_previous_block()
+    prevous_proof = previous_block['proof']
+    proof = blockchain.proof_of_work(prevous_proof) 
 
 
 
