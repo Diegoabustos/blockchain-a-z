@@ -16,7 +16,7 @@ Created on Tue Jan 18 20:54:44 2022
 import datetime
 import hashlib
 import json
-from flask import Flask, jsonfy
+from flask import Flask, jsonify
 
 # Parte 1 - Crear la Cadena de Bloques
 class Blockchain:
@@ -55,7 +55,7 @@ class Blockchain:
     def is_chain_valid(self, chain):
         previous_block =chain[0]
         block_index = 1
-        while block_index < leng(chain):
+        while block_index < len(chain):
             block = chain[block_index]
             if block['previous_hash'] != self.hash(previous_block):
                 return False
@@ -90,7 +90,7 @@ def mine_block():
                 'proof':  block['proof'],
                 'previous_hash': block['previous:hash']
         }
-    return jsonfy(response), 200
+    return jsonify(response), 200
 
 # Obtener la cadena de bloques al completo
 @app.route("/get_chain", methods=['GET'])
@@ -100,6 +100,8 @@ def get_chain():
             }
     return jsonify(response), 200
 
+# Ejecutar la app
+app.run(host = '0.0.0.0', port = 5000)
 
 
 
